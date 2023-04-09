@@ -29,6 +29,8 @@ fn render_item<B: Backend>(f: &mut Frame<B>, item: &Item, index: usize) {
     };
     let title = Span::styled(item.display_name.to_uppercase(), Style::default().fg(Color::Red));
 
+    // ingredients need to be selected in order to show
+    // will change so that only one ingredient items will show
     let items = vec![
         format!("id: {}", &item.id),
         format!("station: {}", station),
@@ -80,7 +82,7 @@ fn get_centered_rect(full_size: Rect, x: u16, y: u16, height: u16, width: u16) -
 fn render_crafting<B: Backend>(f: &mut Frame<B>, item: &Recipe) {
     let area = get_centered_rect(f.size(), 10, 10, 80, 80);
 
-    
+
 
     let block = Paragraph::new("sdkhfsdkf")
         .block(
